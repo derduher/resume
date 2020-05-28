@@ -1,9 +1,74 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 const Body = styled.div`
   position: relative;
   padding: 1rem;
+  max-width: 1024px;
+  font-family: "Open Sans", sans-serif;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+  .hash:first-child {
+    display: none;
+  }
+
+  /** headers */
+  h1,
+  h2,
+  h3 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: bold;
+  }
+
+  /** Name */
+  h1 {
+    font-size: 50pt;
+    color: hsla(0, 0%, 37%, 1);
+    margin-bottom: 0.5rem;
+  }
+  h2,
+  h3 {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .hash {
+      color: hsla(0, 0%, 19%, 0);
+      transition: color 0.2s ease;
+    }
+    &:hover .hash,
+    a:focus .hash {
+      color: hsla(0, 0%, 19%, 1);
+    }
+  }
+  h2 {
+    font-size: 14pt;
+    font-weight: normal;
+    border-bottom: 1px solid #a6a6a6;
+    padding-bottom: 5px;
+    padding-left: 0.5rem;
+  }
+  h3 {
+    font-size: 12pt;
+  }
+  .title {
+    border-bottom: none;
+    font-size: 13pt;
+  }
+
+  /** content */
+  p,
+  li,
+  h2,
+  h3 {
+    color: hsla(0, 0%, 19%, 1);
+  }
   main {
     display: grid;
     grid-template-areas: "primary" "side";
@@ -12,21 +77,121 @@ const Body = styled.div`
       grid-template-columns: 2fr 10fr;
       grid-template-areas: "side primary";
     }
+    @media screen and (min-width: 768px) {
+      > * {
+        padding-top: 1rem;
+      }
+    }
+  }
+  .contact,
+  #Objective {
+    margin-top: 0;
+  }
+  ul {
+    list-style-type: "–   ";
+    padding-left: 1.5rem;
+    @media screen and (min-width: 768px) {
+      list-style-type: "– ";
+      padding-left: 40px;
+    }
   }
   aside {
     grid-area: side;
-    ul {
+
+    @media screen and (min-width: 768px) {
+      text-align: right;
+      padding-right: 1rem;
+      border-right: 1px solid #a6a6a6;
+    }
+    ul,
+    .education,
+    p,
+    address {
       margin: 0;
-      padding: 0;
+      padding-left: 0.5rem;
+      @media screen and (min-width: 768px) {
+        padding: 0;
+      }
     }
     li {
       list-style-type: none;
     }
+    .hash:first-child {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+      .hash:last-child {
+        display: none;
+      }
+      .hash:first-child {
+        display: inline;
+      }
+    }
   }
   .primary {
     grid-area: primary;
+    .position {
+      padding-left: 0.5rem;
+    }
+  }
+
+  .details,
+  h3,
+  p,
+  ul {
+    margin-top: 0;
+  }
+  .details,
+  h3,
+  p {
+    margin-bottom: 0.5rem;
+  }
+  .objective p {
+    padding-left: 0.5rem;
   }
 `;
+
+const ContactSection = styled.section`
+  .contact {
+    text-decoration: none;
+    font-style: normal;
+    &:hover,
+    &:focus {
+      color: hsla(0, 0%, 5%, 1);
+    }
+
+    > * {
+      margin-bottom: 0.5rem;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      @media screen and (min-width: 768px) {
+        color: hsla(0, 0%, 19%, 1);
+      }
+    }
+  }
+  #Contact {
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+`;
+
+const LinkableHeader: FC<{ content: string }> = ({ content }) => {
+  const id = content.replace(/\W+/g, "-");
+  return (
+    <h2 id={id}>
+      <a href={`#${id}`}>
+        <span className="hash"># </span>
+        {content}
+        <span className="hash"> #</span>
+      </a>
+    </h2>
+  );
+};
 
 const Header = styled.header`
   text-align: right;
@@ -36,90 +201,13 @@ function App() {
   return (
     <Body>
       <Header>
-        <h1 className="name">Patrick Joel Weygand</h1>
+        <h1 className="name">Patrick Weygand</h1>
         <h2 className="title">Frontend Engineer</h2>
       </Header>
       <main>
-        <aside>
-          <section>
-            <address className="contact">
-              <div>8527 Pickford Street, Los Angeles</div>
-              <div>California 90035</div>
-              <div>patrick.weygand@gmail.com</div>
-              <div>
-                <a href="https://github.com/derduher/">github.com/derduher</a>
-              </div>
-            </address>
-          </section>
-          <section>
-            <h2>Skills</h2>
-            <ul>
-              <li>Javascript</li>
-              <li>Typscript</li>
-              <li>Linux</li>
-              <li></li>
-              <li>React</li>
-              <li>Redux</li>
-              <li>Graphql</li>
-              <li>Webpack</li>
-              <li>styled components</li>
-              <li>cypress</li>
-              <li>webdriver</li>
-              <li>docker</li>
-              <li>node</li>
-              <li>Page load optimization</li>
-              <li>unit testing</li>
-              <li>continuous integration</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Education</h2>
-            <div className="education">
-              <h3>Computer Science, Bachelor of Science</h3>
-              Institute of Technology (formerly)
-              <br />
-              Univeristy of Minnesota Twin Cities
-              <br />
-              <time dateTime="2009-05" className="time">
-                May 2009
-              </time>
-            </div>
-          </section>
-          <section>
-            <h2>Side Projects</h2>
-            <ul>
-              <li>
-                Maintainer of the most popular sitemap xml generating library +
-                cli
-              </li>
-              <li>Blaster: an Asteroids clone</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Interested In Learning</h2>
-            <ul>
-              <li>Cloud Provider and Devops Tools (AWS, Google)</li>
-              <li>Leadership Skills</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Personality / Fun Fluff</h2>
-            <div className="fluff">
-              <p>
-                I’m a huge nerd. I just finished reading Network Effect, the
-                latest book in a series about a sentient security robot that
-                watches trashy television in its off time.
-              </p>
-              <p>
-                I am also into video/board games. My current favorites are
-                Factorio and Shipwreck Arcana.
-              </p>
-            </div>
-          </section>
-        </aside>
         <div className="primary">
-          <section>
-            <h2>Objective</h2>
+          <section className="objective">
+            <LinkableHeader content="Objective" />
             <p>
               To build quality web applications that people love. To act as a
               servant leader to a smart team of positive people passionate about
@@ -127,7 +215,7 @@ function App() {
             </p>
           </section>
           <section>
-            <h2>Work Experience</h2>
+            <LinkableHeader content="Work Experience" />
             <section className="position">
               <h3>Sr. Software Engineer, Web</h3>
               <div className="details">
@@ -304,6 +392,87 @@ function App() {
             </section>
           </section>
         </div>
+        <aside>
+          <ContactSection>
+            <LinkableHeader content="Contact" />
+            <address className="contact">
+              <div>
+                <a href="mailto:patrick.weygand+resume@gmail.com">
+                  patrick.weygand@gmail.com
+                </a>
+              </div>
+              <div>
+                <a href="https://github.com/derduher/">github.com/derduher</a>
+              </div>
+              <div>Los&nbsp;Angeles</div>
+            </address>
+          </ContactSection>
+          <section>
+            <LinkableHeader content="Skills" />
+            <ul>
+              <li>Javascript</li>
+              <li>Typscript</li>
+              <li>Linux</li>
+              <li></li>
+              <li>React</li>
+              <li>Redux</li>
+              <li>Graphql</li>
+              <li>Webpack</li>
+              <li>styled components</li>
+              <li>cypress</li>
+              <li>webdriver</li>
+              <li>docker</li>
+              <li>node</li>
+              <li>Page load optimization</li>
+              <li>unit testing</li>
+              <li>continuous integration</li>
+            </ul>
+          </section>
+          <section>
+            <LinkableHeader content="Education" />
+            <div className="education">
+              <h3>Computer Science, Bachelor of Science</h3>
+              Institute of Technology (formerly)
+              <br />
+              Univeristy of Minnesota Twin Cities
+              <br />
+              <time dateTime="2009-05" className="time">
+                May 2009
+              </time>
+            </div>
+          </section>
+          <section>
+            <LinkableHeader content="Side Projects" />
+            <ul>
+              <li>
+                Maintainer of the most popular sitemap xml generating library +
+                cli
+              </li>
+              <li>Blaster: an Asteroids clone</li>
+            </ul>
+          </section>
+          <section>
+            <LinkableHeader content="Interested In Learning" />
+            <ul>
+              <li>Cloud Provider and Devops Tools (AWS, Google)</li>
+              <li>Leadership Skills</li>
+            </ul>
+          </section>
+          <section>
+            <LinkableHeader content="Personality / Fun Fluff" />
+            <div className="fluff">
+              <p>
+                I’m a huge nerd. I just finished reading Network Effect, the
+                latest book in a series about a sentient security robot that
+                watches trashy television in its off time.
+              </p>
+              <p>
+                I am also into video/board games. My current favorites are
+                Factorio and Shipwreck Arcana.
+              </p>
+            </div>
+          </section>
+        </aside>
       </main>
     </Body>
   );
