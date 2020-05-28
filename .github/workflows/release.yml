@@ -23,6 +23,7 @@ jobs:
         node-version: 14
     - run: npm ci
     - run: npm test
+    - run: cp -R public dist
     - name: build static
       run: npm run build-static
       env:
