@@ -11,7 +11,7 @@ const sheet = new ServerStyleSheet()
 const indexFile = path.resolve(__dirname, '../public/index.html')
 fs.readFile(indexFile, 'utf8', (err, data) => {
   if (err) {
-    process.stderr.write(err)
+    console.error(err)
   }
 try {
   const markup = ReactDOMServer.renderToStaticMarkup(
