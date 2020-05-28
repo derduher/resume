@@ -26,6 +26,6 @@ jobs:
     - name: build static
       run: npm run build-static
       env:
-        NODE_ENV: production
+        NODE_ENV: development
 
     - run: npm run upload-static
