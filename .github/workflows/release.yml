@@ -23,6 +23,5 @@ jobs:
         node-version: 14
     - run: npm ci
     - run: npm test
-    - run: npm run build
-    - run: npm run upload
-    - run: npm run upload-html
+    - run: npm run build-static
+    - run: npm run upload-static

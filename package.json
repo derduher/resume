@@ -20,9 +20,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-static": "npx tsc -p tsconfigserver.json && node dist/server/bootstrap.js > dist/index.html",
     "test": "react-scripts test",
     "upload": "aws s3 sync build/ s3://aws-website-blaster-2d3g4 --delete --cache-control 'public, max-age=31540000' --exclude '*.html'",
     "upload-html": "aws s3 sync build/ s3://aws-website-blaster-2d3g4 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'",
+    "upload-static": "aws s3 sync dist/ s3://aws-website-blaster-2d3g4 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
