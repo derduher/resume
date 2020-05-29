@@ -23,10 +23,14 @@ jobs:
         node-version: 14
     - run: npm ci
     - run: npm test
+    - run: mkdir dist
+    - run: ls -l public
     - run: cp -R public dist
+    - run: ls -l dist
     - name: build static
       run: npm run build-static
       env:
         NODE_ENV: development
+    - run: ls -l dist
 
     - run: npm run upload-static
