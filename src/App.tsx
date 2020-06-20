@@ -180,16 +180,14 @@ const ContactSection = styled.section`
   }
 `;
 
-const LinkableHeader: FC<{ content: string }> = ({ content }) => {
+const LinkableHeader: FC<{ content: string, lower?: boolean }> = ({ content, lower = false }) => {
   const id = content.replace(/\W+/g, "-");
-  return (
-    <h2 id={id}>
+  return React.createElement(lower ? 'h3' : 'h2', {id},
       <a href={`#${id}`}>
         <span className="hash"># </span>
         {content}
         <span className="hash"> #</span>
       </a>
-    </h2>
   );
 };
 
@@ -217,7 +215,7 @@ function App() {
           <section>
             <LinkableHeader content="Work Experience" />
             <section className="position">
-              <h3>Sr. Software Engineer, Web</h3>
+              <LinkableHeader content="Sr. Software Engineer, Web" lower />
               <div className="details">
                 Fender, Hollywood CA, <time dateTime="2019-06">Jun 2019</time> -{" "}
                 <time dateTime="2020-05-15">May 2020</time>
@@ -257,7 +255,7 @@ function App() {
               </ul>
             </section>
             <section className="position">
-              <h3>Principal User Interface Engineer</h3>
+              <LinkableHeader lower content="Principal User Interface Engineer"/>
               <div className="details">
                 RingDNA, Sherman Oaks CA,{" "}
                 <time dateTime="2019-01">Jan 2019</time> -{" "}
@@ -270,7 +268,7 @@ function App() {
               </p>
             </section>
             <section className="position">
-              <h3>Sr. Frontend Engineer</h3>
+              <LinkableHeader lower content="Sr. Frontend Engineer"/>
               <div className="details">
                 Fullscreen, Los Angeles CA,{" "}
                 <time dateTime="2015-09">Sep 2015</time> -{" "}
@@ -307,7 +305,7 @@ function App() {
               </ul>
             </section>
             <section className="position">
-              <h3>Sr. UI Engineer</h3>
+              <LinkableHeader lower content="Sr. UI Engineer"/>
               <div className="details">
                 Ubiquiti, Los Angeles CA,{" "}
                 <time dateTime="2012-10">Oct 2012</time> -{" "}
@@ -352,7 +350,7 @@ function App() {
               </ul>
             </section>
             <section className="position">
-              <h3>Software Engineer</h3>
+              <LinkableHeader lower content="Software Engineer"/>
               <div className="details">
                 Gorilla Nation (Evolve Media Corp), Los Angeles CA,{" "}
                 <time dateTime="2011-01">Jan 2011</time> -{" "}
@@ -373,7 +371,7 @@ function App() {
               </p>
             </section>
             <section className="position">
-              <h3>QA Engineer</h3>
+              <LinkableHeader lower content="QA Engineer"/>
               <div className="details">
                 Pricegrabber.com, Los Angeles CA,{" "}
                 <time dateTime="2009-06">Jun 2009</time> -{" "}
