@@ -10,6 +10,8 @@
     "@types/node": "^18.6.3",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-c23de8d-20240515",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-53bb89e-20240515",
     "react": "^19.0.0-rc-915b914b3a-20240515",
     "react-dom": "^19.0.0-rc-915b914b3a-20240515",
     "typescript": "^5.4.5"
@@ -19,7 +21,13 @@
     "upload-static": "aws s3 sync dist/ s3://weygand-dev-2409654 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "eslint-plugin-react-compiler"
+    ],
+    "rules": {
+      "react-compiler/react-compiler": 2
+    }
   },
   "browserslist": {
     "production": [
