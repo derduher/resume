@@ -9,20 +9,53 @@ function App() {
     <Body>
       <Header>
         <h1 className="name">Patrick Weygand</h1>
-        <h2 className="title">Frontend Engineer</h2>
+        <h2 className="title">Team Lead</h2>
       </Header>
       <main>
         <div className="primary">
           <section className="objective">
             <LinkableHeader content="Objective" />
             <p>
-              To build quality web applications that people love. To act as a
-              servant leader to a smart team of positive people passionate about
-              what they do.
+              To build quality web applications that people love. To mentor and
+              grow a smart team of positive people passionate about what they
+              do.
             </p>
           </section>
           <section>
             <LinkableHeader content="Work Experience" />
+            <section className="position">
+              <LinkableHeader
+                content="Senior Software Engineer, Team Lead"
+                lower
+              />
+              <div className="details">
+                Motional, Remote, <time dateTime="2020-07">Jul 2020</time> -{" "}
+                <time dateTime="2024-05-07">May 2024</time>
+              </div>
+              <p>Lead of the in-house Annotation Tools team</p>
+              <ul>
+                <li>
+                  Transitioned from an IC to hiring and managing a team of six
+                </li>
+                <li>
+                  Defined team process by setting code best practices, release
+                  process, team workflow, and support process
+                </li>
+                <li>
+                  Oversaw the development of an entire suite of annotation tools
+                  including two 3d LiDAR annotation tools, five image based
+                  labeling tools and, one audio tool
+                </li>
+                <li>
+                  Defined quarterly goals in collaboration with customer and
+                  dependent teams
+                </li>
+                <li>
+                  Developed an AWS CDK backed Codepipeline connecting our gitlab
+                  instance to our s3 backed Cloudfront site
+                </li>
+              </ul>
+            </section>
             <section className="position">
               <LinkableHeader content="Sr. Software Engineer, Web" lower />
               <div className="details">
@@ -223,17 +256,22 @@ function App() {
               <li>Javascript</li>
               <li>Typscript</li>
               <li>Linux</li>
+              <li>AWS CDK</li>
+              <li>AWS Cloudfront</li>
+              <li>AWS s3</li>
+              <li>AWS CodePipeline</li>
               <li></li>
               <li>React</li>
-              <li>Redux</li>
               <li>Graphql</li>
-              <li>Webpack</li>
-              <li>styled components</li>
-              <li>cypress</li>
-              <li>webdriver</li>
-              <li>docker</li>
-              <li>node</li>
               <li>Page load optimization</li>
+              <li>Redux</li>
+              <li>Webpack</li>
+              <li>useSWR</li>
+              <li>Playwright</li>
+              <li>Cypress</li>
+              <li>Webdriver</li>
+              <li>Docker</li>
+              <li>Node</li>
               <li>unit testing</li>
               <li>continuous integration</li>
             </ul>
@@ -255,8 +293,8 @@ function App() {
             <LinkableHeader content="Side Projects" />
             <ul>
               <li>
-                Maintainer of the most popular sitemap xml generating library +
-                cli
+                Former maintainer of the most popular sitemap xml generating
+                library + cli
               </li>
               <li>Blaster: an Asteroids clone</li>
             </ul>
@@ -265,16 +303,16 @@ function App() {
             <LinkableHeader content="Interested In Learning" />
             <ul>
               <li>Cloud Provider and Devops Tools (AWS, Google)</li>
-              <li>Leadership Skills</li>
+              <li>Backend development</li>
             </ul>
           </section>
           <section>
             <LinkableHeader content="Personality / Fun Fluff" />
             <div className="fluff">
               <p>
-                I’m a huge nerd. I just finished reading Network Effect, the
-                latest book in a series about a sentient security robot that
-                watches trashy television in its off time.
+                I’m a huge nerd. I just finished reading Network Effect, from a
+                series about a sentient security robot that watches trashy
+                television in its off time.
               </p>
               <p>
                 I am also into video/board games. My current favorites are
