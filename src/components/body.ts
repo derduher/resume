@@ -5,8 +5,7 @@ export const Body = styled.div`
   padding: 1rem;
   max-width: 1024px;
   font-family: "Open Sans", sans-serif;
-
-  @media screen and (min-width: 768px) {
+  --cool-gray: rgb(140 140 140/0.2) @media screen and (min-width: 768px) {
     margin: 0 auto;
   }
 
@@ -70,13 +69,10 @@ export const Body = styled.div`
   }
   main {
     display: grid;
-    grid-template-areas: "primary" "side";
     grid-gap: 1rem;
-    @media screen and (min-width: 768px) {
-      grid-template-columns: 2fr 10fr;
-      grid-template-areas: "side primary";
-    }
-    @media screen and (min-width: 768px) {
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas: "side primary";
+    @media (min-width: 768px) {
       > * {
         padding-top: 1rem;
       }
@@ -87,35 +83,29 @@ export const Body = styled.div`
     margin-top: 0;
   }
   ul {
-    list-style-type: "–   ";
     padding-left: 1.5rem;
-    @media screen and (min-width: 768px) {
-      list-style-type: "– ";
-      padding-left: 40px;
-    }
+    list-style-type: "– ";
   }
   aside {
     grid-area: side;
 
-    @media screen and (min-width: 768px) {
-      text-align: right;
-      padding-right: 1rem;
-      border-right: 1px solid #a6a6a6;
+    text-align: right;
+    padding-right: 1rem;
+    border-right: 1px solid #a6a6a6;
+    h2 {
+      margin-top: 0;
     }
     ul,
     .education,
     p,
     address {
       margin: 0;
-      padding-left: 0.5rem;
-      @media screen and (min-width: 768px) {
-        padding: 0;
-      }
+      padding: 0;
     }
     li {
       list-style-type: none;
     }
-    .hash:first-child {
+    .hash {
       display: none;
     }
     @media screen and (min-width: 768px) {
@@ -141,11 +131,82 @@ export const Body = styled.div`
     margin-top: 0;
   }
   .details,
-  h3,
   p {
     margin-bottom: 0.5rem;
   }
   .objective p {
     padding-left: 0.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+  .details {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .position {
+    position: relative;
+  }
+  .multiple-positions {
+    padding-left: 1rem;
+  }
+
+  .multiple-positions .position:first-of-type::before {
+    content: "";
+    position: absolute;
+    left: calc(-0.5rem - 1px);
+    top: 0.3rem;
+    height: calc(100% + 4rem);
+    width: 2px;
+    background-color: var(--cool-gray);
+  }
+  .printable {
+    display: none;
+  }
+  @media print {
+    /* All your print styles go here */
+    h1 {
+      font-size: 30pt;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    .printable {
+      display: inline;
+    }
+    .title {
+      font-size: 10pt;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      padding: 0;
+    }
+    main {
+      grid-template-columns: 10fr 2fr;
+      grid-template-areas: "primary side";
+    }
+    aside {
+      border-left: 1px solid #a6a6a6;
+      border-right: 0;
+      text-align: left;
+      padding-left: 1rem;
+      padding-right: 0;
+      li {
+        padding-left: 0.2em;
+        text-indent: -0.2em;
+      }
+    }
+    h2 {
+      padding-left: 0;
+    }
+    .primary .position {
+      padding-left: 0;
+    }
+
+    .objective p {
+      padding-left: 0;
+    }
+    section {
+      margin-bottom: 1rem;
+    }
   }
 `;

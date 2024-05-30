@@ -9,7 +9,18 @@ function App() {
     <Body>
       <Header>
         <h1 className="name">Patrick Weygand</h1>
-        <h2 className="title">Team Lead</h2>
+        <h2 className="title">
+          Team Lead, Senior Engineer{" "}
+          <span className="printable">
+            |&nbsp;
+            <span>
+              <a href="mailto:patrick.weygand+resume@gmail.com">
+                patrick.weygand@gmail.com
+              </a>
+            </span>
+            &nbsp;|&nbsp;<span>Los&nbsp;Angeles</span>
+          </span>
+        </h2>
       </Header>
       <main>
         <div className="primary">
@@ -17,44 +28,86 @@ function App() {
             <LinkableHeader content="Objective" />
             <p>
               To build quality web applications that people love. To mentor and
-              grow a smart team of positive people passionate about what they
-              do.
+              grow a smart team of positive passionate people.
             </p>
           </section>
           <section>
             <LinkableHeader content="Work Experience" />
             <section className="position">
-              <LinkableHeader
-                content="Senior Software Engineer, Team Lead"
-                lower
-              />
+              <LinkableHeader content="Motional (competitor to Waymo)" lower />
               <div className="details">
-                Motional, Remote, <time dateTime="2020-07">Jul 2020</time> -{" "}
+                Remote, <time dateTime="2020-07">Jul 2020</time> -{" "}
                 <time dateTime="2024-05-07">May 2024</time>
               </div>
-              <p>Lead of the in-house Annotation Tools team</p>
-              <ul>
-                <li>
-                  Transitioned from an IC to hiring and managing a team of six
-                </li>
-                <li>
-                  Defined team process by setting code best practices, release
-                  process, team workflow, and support process
-                </li>
-                <li>
-                  Oversaw the development of an entire suite of annotation tools
-                  including two 3d LiDAR annotation tools, five image based
-                  labeling tools and, one audio tool
-                </li>
-                <li>
-                  Defined quarterly goals in collaboration with customer and
-                  dependent teams
-                </li>
-                <li>
-                  Developed an AWS CDK backed Codepipeline connecting our gitlab
-                  instance to our s3 backed Cloudfront site
-                </li>
-              </ul>
+              <div className="multiple-positions">
+                <section className="position">
+                  <LinkableHeader
+                    content="Senior Software Engineer, Team Lead"
+                    lower
+                  />
+                  <div className="details">
+                    <time dateTime="2021-06">Jun 2021</time> -{" "}
+                    <time dateTime="2024-05-07">May 2024</time>
+                  </div>
+                  <p>Led the in-house ML Annotation Tools team</p>
+                  <ul>
+                    <li>
+                      Transitioned from an IC to hiring and managing a team of
+                      six
+                    </li>
+                    <li>
+                      Led the development of an end-to-end suite of web-based
+                      annotation applications including two 3d LiDAR annotation
+                      tools, five image based labeling tools and, one audio tool
+                    </li>
+                    <li>
+                      Defined team process by setting code best practices,
+                      release process, team workflow, and support process
+                    </li>
+                    <li>
+                      Defined quarterly goals in collaboration with customer and
+                      dependent teams
+                    </li>
+                    <li>
+                      Developed Real User Metrics collection system, laid out
+                      case for and drove technical solution to slow load times
+                      in India. Up to 10m reduction in load time.
+                    </li>
+                  </ul>
+                </section>
+                <section className="position">
+                  <LinkableHeader content="Senior Software Engineer" lower />
+                  <div className="details">
+                    <time dateTime="2020-07">Jul 2020</time> -{" "}
+                    <time dateTime="2021-06">Jun 2021</time>
+                  </div>
+                  <p>
+                    Started as an individual contributor as a part of the
+                    Machine Learning Platform team
+                  </p>
+                  <ul>
+                    <li>
+                      Developed an AWS CDK backed Codepipeline connecting our
+                      gitlab instance to our s3 backed Cloudfront site
+                    </li>
+                    <li>Converted custom webpack to Create React App</li>
+                    <li>Rewrote platform to use 100% Typescript</li>
+                    <li>
+                      Built multiple Annotation tools including{" "}
+                      <ul>
+                        <li>Traffic light annotation</li>
+                        <li>2d instance-segmentation</li>
+                        <li>
+                          A 3d three.js backed lidar annotation viewer that
+                          would serve as the basis for a full fledged annotation
+                          tool
+                        </li>
+                        <li>Video playback</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </section>
+              </div>
             </section>
             <section className="position">
               <LinkableHeader content="Sr. Software Engineer, Web" lower />
@@ -236,7 +289,7 @@ function App() {
           </section>
         </div>
         <aside>
-          <ContactSection>
+          <ContactSection className="contact-section">
             <LinkableHeader content="Contact" />
             <address className="contact">
               <div>
@@ -253,27 +306,27 @@ function App() {
           <section>
             <LinkableHeader content="Skills" />
             <ul>
+              <li>Typescript</li>
               <li>Javascript</li>
-              <li>Typscript</li>
-              <li>Linux</li>
+              <li>React</li>
               <li>AWS CDK</li>
               <li>AWS Cloudfront</li>
-              <li>AWS s3</li>
+              <li>AWS S3</li>
               <li>AWS CodePipeline</li>
               <li></li>
-              <li>React</li>
-              <li>Graphql</li>
-              <li>Page load optimization</li>
+              <li>useSWR</li>
+              <li>Page Load Optimization</li>
               <li>Redux</li>
               <li>Webpack</li>
-              <li>useSWR</li>
               <li>Playwright</li>
               <li>Cypress</li>
               <li>Webdriver</li>
               <li>Docker</li>
               <li>Node</li>
-              <li>unit testing</li>
-              <li>continuous integration</li>
+              <li>Unit Testing</li>
+              <li>Continuous Integration</li>
+              <li>Graphql</li>
+              <li>Linux</li>
             </ul>
           </section>
           <section>
