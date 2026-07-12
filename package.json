@@ -3,32 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/preset-env": "^7.10.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^14.3.0",
-    "@types/jest": "^28.1.6",
-    "@types/node": "^18.6.3",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.1.0",
-    "typescript": "^4.7.4"
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build-static": "npx tsc -p tsconfigserver.json && node dist/server/bootstrap.js > dist/index.html",
-    "test": "react-scripts test",
-    "upload": "aws s3 sync build/ s3://aws-website-blaster-2d3g4 --delete --cache-control 'public, max-age=31540000' --exclude '*.html'",
-    "upload-html": "aws s3 sync build/ s3://aws-website-blaster-2d3g4 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'",
-    "upload-static": "aws s3 sync dist/ s3://weygand-dev-2409654 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "upload-static": "aws s3 sync out/ s3://weygand-dev-2409654 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.3.0",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   },
   "browserslist": {
     "production": [
@@ -41,17 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/preset-react": "^7.10.1",
-    "@babel/register": "^7.10.1",
-    "@types/styled-components": "^5.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-preset-react-app": "^10.0.1",
-    "nodemon": "^2.0.4",
-    "npm-run-all": "^4.1.5",
-    "webpack-cli": "^4.10.0",
-    "webpack-node-externals": "^3.0.0"
   }
 }

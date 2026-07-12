@@ -10,6 +10,8 @@
 
 # production
 /build
+/out
+/.next
 dist
 
 # misc
@@ -26,3 +28,4 @@ yarn-error.log*
 *.code-workspace
 dist-bk
 dist-bk2
+*.tsbuildinfo
