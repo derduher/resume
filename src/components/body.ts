@@ -5,7 +5,8 @@ export const Body = styled.div`
   padding: 1rem;
   max-width: 1024px;
   font-family: "Open Sans", sans-serif;
-  --cool-gray: rgb(140 140 140/0.2) @media screen and (min-width: 768px) {
+  --cool-gray: rgb(140 140 140/0.2);
+  @media screen and (min-width: 768px) {
     margin: 0 auto;
   }
 
@@ -48,7 +49,7 @@ export const Body = styled.div`
   h2 {
     font-size: 14pt;
     font-weight: normal;
-    border-bottom: 1px solid #a6a6a6;
+    border-bottom: 1px solid var(--cool-gray);
     padding-bottom: 5px;
     padding-left: 0.5rem;
   }
@@ -91,7 +92,7 @@ export const Body = styled.div`
 
     text-align: right;
     padding-right: 1rem;
-    border-right: 1px solid #a6a6a6;
+    border-right: 1px solid var(--cool-gray);
     h2 {
       margin-top: 0;
     }
@@ -158,7 +159,7 @@ export const Body = styled.div`
     left: calc(-0.5rem - 1px);
     top: 0.3rem;
     height: calc(100% + 4rem);
-    width: 2px;
+    width: 1px;
     background-color: var(--cool-gray);
   }
   .printable {
@@ -185,7 +186,7 @@ export const Body = styled.div`
       grid-template-areas: "primary side";
     }
     aside {
-      border-left: 1px solid #a6a6a6;
+      border-left: 1px solid var(--cool-gray);
       border-right: 0;
       text-align: left;
       padding-left: 1rem;
@@ -207,6 +208,10 @@ export const Body = styled.div`
     }
     section {
       margin-bottom: 1rem;
+    }
+    .multiple-positions .position:first-of-type::before {
+      height: calc(100% + 3rem);
+      left: calc(-0.8rem - 1px);
     }
   }
 `;

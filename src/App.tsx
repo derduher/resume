@@ -52,21 +52,27 @@ function App() {
                   <p>Led the in-house ML Annotation Tools team</p>
                   <ul>
                     <li>
-                      Transitioned from an IC to hiring and managing a team of
-                      six
+                      Promoted from an Individual Contributor role to hire and
+                      manage a team of six
                     </li>
                     <li>
-                      Led the development of an end-to-end suite of web-based
-                      annotation applications including two 3d LiDAR annotation
-                      tools, five image based labeling tools and, one audio tool
+                      Led the development of an end-to-end suite of 8 web-based
+                      annotation applications, including two 3d LiDAR annotation
+                      tools, five image based labeling tools and, one audio
+                      tool.
                     </li>
                     <li>
-                      Defined team process by setting code best practices,
-                      release process, team workflow, and support process
+                      Defined team process by setting team workflow, code best
+                      practices, release/support process, reducing hotfixes from
+                      weekly to quarterly and cutting lead time on customer
+                      requests from 1 month to 2 weeks.
                     </li>
                     <li>
                       Defined quarterly goals in collaboration with customer and
-                      dependent teams
+                      dependent teams, driving hard metrics such as annotator
+                      throughput. This enabled us to be cost competitive with
+                      external vendors such as Scale but more flexible and
+                      specific to our ML team's needs.
                     </li>
                     <li>
                       Developed Real User Metrics collection system, laid out
@@ -98,7 +104,7 @@ function App() {
                         <li>Traffic light annotation</li>
                         <li>2d instance-segmentation</li>
                         <li>
-                          A 3d three.js backed lidar annotation viewer that
+                          A 3d three.js powered lidar annotation viewer that
                           would serve as the basis for a full fledged annotation
                           tool
                         </li>
