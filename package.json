@@ -12,7 +12,9 @@
     "build": "next build",
     "lint": "eslint .",
     "test": "vitest run",
-    "upload-static": "aws s3 sync out/ s3://weygand-dev-2409654 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'"
+    "upload-assets": "aws s3 sync out/ s3://weygand-dev-2409654 --delete --cache-control 'public, max-age=31536000, immutable' --exclude '*.html'",
+    "upload-html": "aws s3 sync out/ s3://weygand-dev-2409654 --cache-control 'public, max-age=600' --exclude '*' --include '*.html'",
+    "upload-static": "npm run upload-assets && npm run upload-html"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
