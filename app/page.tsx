@@ -1,10 +1,9 @@
-import React from "react";
 import { Body } from "./components/body";
 import { ContactSection } from "./components/contact-section";
 import { Header } from "./components/header";
 import { LinkableHeader } from "./components/linkable-header";
 
-function App() {
+export default function Page() {
   return (
     <Body>
       <Header>
@@ -120,7 +119,7 @@ function App() {
                 <time dateTime="2018-12-03">Dec 2018</time>
               </div>
               <ul>
-                <li>Built Rooster Teeth's Community platform. </li>
+                <li>Built Rooster Teeth’s Community platform. </li>
                 <li>
                   When there was a need to have someone step in and take charge,
                   I acted as a servant leader, supporting the product owners by
@@ -210,7 +209,7 @@ function App() {
                 boilerplate for fast page loads. I built Flash-less JavaScript
                 ad unit called “the Sliver,” a highly customizable and remotely
                 configurable buildable product. The Sliver is cross-browser and
-                mobile friendly, weighing in at 8kb gzipped/minified.  I built
+                mobile friendly, weighing in at 8kb gzipped/minified.  I built
                 ORM interface (datasource) for Cake 2.X to Google’s DFP API
                 Service.
               </p>
@@ -228,7 +227,7 @@ function App() {
                 and make the testing process easier. I enhanced an existing XML
                 API tool with schema validation using jQuery, xmllint, CSS,
                 HTML, JavaScript and PHP. I developed and maintained subversion
-                tools written in Perl as well as  served as a backup release
+                tools written in Perl as well as  served as a backup release
                 manager, building Release Candidates and pushing them to live
                 servers.
               </p>
@@ -325,5 +324,3 @@ function App() {
     </Body>
   );
 }
-
-export default App;

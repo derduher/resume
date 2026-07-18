@@ -8,7 +8,7 @@ export interface LinkableHeaderProps {
 export const LinkableHeader = ({
   content,
   lower = false,
-}: LinkableHeaderProps): JSX.Element => {
+}: LinkableHeaderProps): React.JSX.Element => {
   const id = content.replace(/\W+/g, "-");
   return React.createElement(
     lower ? "h3" : "h2",
