@@ -27,4 +27,8 @@ jobs:
     - run: npm run build
     - run: ls -l out
 
-    - run: npm run upload-static
+    # Upload immutable, content-hashed assets (CSS/JS/fonts) first, then the
+    # HTML that references them, so the site is never served with stale HTML
+    # pointing at assets that don't exist yet.
+    - run: npm run upload-assets
+    - run: npm run upload-html
